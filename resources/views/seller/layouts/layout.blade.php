@@ -33,24 +33,45 @@
 						Main
 					</li>
 
-					<li class="sidebar-item {{ request()->routeIs('admin') ? 'active' : '' }}">
-						<a class="sidebar-link" href="{{ route('admin') }}">
+					<li class="sidebar-item {{ request()->routeIs('vendor') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ route('vendor') }}">
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
+            </a>
+					</li>
+					<li class="sidebar-item {{ request()->routeIs('vendor.order.history') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ route('vendor.order.history') }}">
+              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Order History</span>
             </a>
 					</li>
 
 					<li class="sidebar-header">
-						Category
+						Store
 					</li>
 
-					<li class="sidebar-item {{ request()->routeIs('category.create') ? 'active' : '' }}">
-						<a class="sidebar-link" href="{{ route('category.create') }}">
+					<li class="sidebar-item {{ request()->routeIs('vendor.store') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ route('vendor.store') }}">
               <i class="align-middle" data-feather="plus"></i> <span class="align-middle">Create</span>
             </a>
 					</li>
 
-					<li class="sidebar-item {{ request()->routeIs('category.manage') ? 'active' : '' }}">
-						<a class="sidebar-link" href="{{ route('category.manage') }}">
+					<li class="sidebar-item {{ request()->routeIs('vendor.store.manage') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ route('vendor.store.manage') }}">
+              <i class="align-middle" data-feather="list"></i> <span class="align-middle">Manage</span>
+            </a>
+					</li>
+
+					<li class="sidebar-header">
+						Product
+					</li>
+
+					<li class="sidebar-item {{ request()->routeIs('vendor.product') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ route('vendor.product') }}">
+              <i class="align-middle" data-feather="plus"></i> <span class="align-middle">Create</span>
+            </a>
+					</li>
+
+					<li class="sidebar-item {{ request()->routeIs('vendor.product.manage') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ route('vendor.product.manage') }}">
               <i class="align-middle" data-feather="list"></i> <span class="align-middle">Manage</span>
             </a>
 					</li>

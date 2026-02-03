@@ -76,6 +76,7 @@ Route::middleware(['auth', 'verified','rolemanager:vendor'])->group(function () 
         Route::controller(SellerMainController::class)->group(function () {
         
                 Route::get('/dashboard', 'index')->name('vendor');
+                Route::get('/order/history', 'orderhistory')->name('vendor.order.history');
                 
             });
 
