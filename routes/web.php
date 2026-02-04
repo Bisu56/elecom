@@ -11,15 +11,13 @@ use App\Http\Controllers\Seller\SellerMainController;
 use App\Http\Controllers\Seller\SellerProductController;
 use App\Http\Controllers\Seller\SellerStoreController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Customer\CustomerMainController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified','rolemanager:user'])->name('dashboard');
 
 // admin routes
 Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
@@ -97,6 +95,21 @@ Route::middleware(['auth', 'verified','rolemanager:vendor'])->group(function () 
     });
 });
 
+
+// customer routes
+Route::middleware(['auth', 'verified','rolemanager:customer'])->group(function () {
+    Route::prefix('customer')->group(function () {
+        Route::controller(CustomerMainController::class)->group(function () {
+        
+                Route::get('/dashboard', 'index')->name('customer');
+                Route::get('/profile', 'profile')->name('customer.profile');
+                Route::get('/order/history', 'orderhistory')->name('customer.order.history');
+                
+            });
+
+        
+    });
+});
 
 
 Route::middleware('auth')->group(function () {
