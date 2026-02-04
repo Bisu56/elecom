@@ -13,6 +13,6 @@ class SellerProductController extends Controller
     }
 
     public function manage(){
-        return view('seller.product.manage')
+        return view('seller.product.manage');
     }
 }
