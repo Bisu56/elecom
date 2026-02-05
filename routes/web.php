@@ -103,7 +103,9 @@ Route::middleware(['auth', 'verified','rolemanager:customer'])->group(function (
         
                 Route::get('/dashboard', 'index')->name('customer');
                 Route::get('/profile', 'profile')->name('customer.profile');
-                Route::get('/order/history', 'orderhistory')->name('customer.order.history');
+                Route::get('/order/history', 'history')->name('customer.history');
+                Route::get('/setting/payment', 'payment')->name('customer.payment');
+                Route::get('/affiliate', 'affilate')->name('customer.affiliate');
                 
             });
 

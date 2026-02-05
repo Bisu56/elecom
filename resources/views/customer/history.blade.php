@@ -1,5 +1,5 @@
 @extends('customer.layouts.layout')
 @section('customer_layout')
-    <h1 class="h3 mb-3">Profile</h1>
+    <h1 class="h3 mb-3">History</h1>
 
 @endsection
