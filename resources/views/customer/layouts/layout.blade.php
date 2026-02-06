@@ -41,17 +41,17 @@
 
 					<li class="sidebar-item {{ request()->routeIs('customer.history') ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ route('customer.history') }}">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">History</span>
+              <i class="align-middle" data-feather="clipboard"></i> <span class="align-middle">History</span>
             </a>
 					</li>
 					<li class="sidebar-item {{ request()->routeIs('customer.payment') ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ route('customer.payment') }}">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Payment</span>
+              <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Payment</span>
             </a>
 					</li>
 					<li class="sidebar-item {{ request()->routeIs('customer.affiliate') ? 'active' : '' }}">
 						<a class="sidebar-link" href="{{ route('customer.affiliate') }}">
-              <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Affiliate</span>
+              <i class="align-middle" data-feather="users"></i> <span class="align-middle">Affiliate</span>
             </a>
 					</li>
 
