@@ -12,6 +12,7 @@ use App\Http\Controllers\Seller\SellerProductController;
 use App\Http\Controllers\Seller\SellerStoreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Customer\CustomerMainController;
+use App\Http\Controllers\MasterCategoryController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,6 +35,7 @@ Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
 
         Route::controller(CategoryController::class)->group(function () {
             Route::get('/category/create', 'index')->name('category.create');
+            Route::post('/category/create', 'store')->name('category.store');
             Route::get('/category/manage', 'manage')->name('category.manage');
                 
         });
@@ -59,6 +61,11 @@ Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
         Route::controller(ProductDiscountController::class)->group(function () {
             Route::get('/discount/create', 'index')->name('discount.create');
             Route::get('/discount/manage', 'manage')->name('discount.manage');
+                
+        });
+
+        Route::controller(MasterCategoryController::class)->group(function () {
+            Route::post('/store/category', 'storecat')->name('store.cat');
                 
         });
 
