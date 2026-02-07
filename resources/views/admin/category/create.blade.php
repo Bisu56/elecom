@@ -9,6 +9,21 @@
                     <h4 class="card-title">Create Category</h4>
                 </div>
                 <div class="card-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+
                     <form action="" method="POST">
                         @csrf
                         <label for="category_name" class="fw-bold mb-2">Category Name</label>
