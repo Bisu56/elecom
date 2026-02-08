@@ -66,6 +66,9 @@ Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
 
         Route::controller(MasterCategoryController::class)->group(function () {
             Route::post('/store/category', 'storecat')->name('store.cat');
+            Route::get('/category/{id}', 'showcat')->name('show.cat');
+            Route::put('/category/{id}', 'updatecat')->name('update.cat');
+            Route::delete('/category/{id}', 'destroycat')->name('destroy.cat');
                 
         });
 
