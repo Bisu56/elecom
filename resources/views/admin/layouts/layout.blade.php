@@ -60,14 +60,14 @@
 						Sub Category
 					</li>
 
-					<li class="sidebar-item {{ request()->routeIs('subcategory.create') ? 'active' : '' }}">
-						<a class="sidebar-link" href="{{ route('subcategory.create') }}">
+					<li class="sidebar-item {{ request()->routeIs('admin.sub_category.create') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ route('admin.sub_category.create') }}">
               <i class="align-middle" data-feather="plus"></i> <span class="align-middle">Create</span>
             </a>
 					</li>
 
-					<li class="sidebar-item {{ request()->routeIs('subcategory.manage') ? 'active' : '' }}">
-						<a class="sidebar-link" href="{{ route('subcategory.manage') }}">
+					<li class="sidebar-item {{ request()->routeIs('admin.sub_category.manage') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ route('admin.sub_category.manage') }}">
               <i class="align-middle" data-feather="list"></i> <span class="align-middle">Manage</span>
             </a>
 					</li>
