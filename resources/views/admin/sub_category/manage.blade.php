@@ -31,8 +31,8 @@
                                         <td>{{ $subcategory->category->category_name ?? 'N/A' }}</td>
                                         <td>
                                             {{-- Add edit and delete buttons here --}}
-                                            <a href="#" class="btn btn-sm btn-primary">Edit</a>
-                                            <form action="#" method="POST" style="display:inline;">
+                                            <a href="{{ route('show.subcat', $subcategory->id) }}" class="btn btn-sm btn-primary">Edit</a>
+                                            <form action="{{ route('destroy.subcat', $subcategory->id) }}" method="POST" style="display:inline;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-sm btn-danger">Delete</button>

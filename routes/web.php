@@ -39,9 +39,12 @@ Route::middleware(['auth', 'verified', 'rolemanager:admin'])->group(function () 
         });
 
         Route::controller(MasterSubCategoryController::class)->group(function () { // Changed to MasterSubCategoryController
-            Route::get('/subcategory/create', 'create')->name('admin.sub_category.create'); // Corrected route name
+            Route::get('/subcategory/create', 'index')->name('admin.sub_category.create'); // Corrected route name
             Route::get('/subcategory/manage', 'manage')->name('admin.sub_category.manage'); // Corrected route name
             Route::post('/store/subcategory', 'storesubcat')->name('store.subcat');
+            Route::get('/subcategory/{id}', 'showsubcat')->name('show.subcat');
+            Route::put('/subcategory/{id}', 'updatesubcat')->name('update.subcat');
+            Route::delete('/subcategory/{id}', 'destroysubcat')->name('destroy.subcat');
         });
 
         Route::controller(ProductController::class)->group(function () {
