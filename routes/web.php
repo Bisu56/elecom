@@ -54,9 +54,12 @@ Route::middleware(['auth', 'verified', 'rolemanager:admin'])->group(function () 
         });
 
         Route::controller(ProductAttributeController::class)->group(function () {
-            Route::get('/productattribute/create', 'index')->name('productattribute.create');
-            Route::get('/productattribute/manage', 'manage')->name('productattribute.manage');
-
+            Route::get('/productattribute/manage', 'index')->name('admin.product_attribute.index');
+            Route::get('/productattribute/create', 'create')->name('admin.product_attribute.create');
+            Route::post('/productattribute/store', 'store')->name('admin.product_attribute.store');
+            Route::get('/productattribute/edit/{product_attribute}', 'edit')->name('admin.product_attribute.edit');
+            Route::put('/productattribute/update/{product_attribute}', 'update')->name('admin.product_attribute.update');
+            Route::delete('/productattribute/delete/{product_attribute}', 'destroy')->name('admin.product_attribute.destroy');
         });
 
         Route::controller(ProductDiscountController::class)->group(function () {
