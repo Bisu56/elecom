@@ -82,8 +82,8 @@
             </a>
 					</li>
 
-					<li class="sidebar-item {{ request()->routeIs('productattribute.manage') ? 'active' : '' }}">
-						<a class="sidebar-link" href="{{ route('productattribute.manage') }}">
+					<li class="sidebar-item {{ request()->routeIs('admin.product_attribute.index') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ route('admin.product_attribute.index') }}">
               <i class="align-middle" data-feather="list"></i> <span class="align-middle">Manage</span>
             </a>
 					</li>
