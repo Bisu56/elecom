@@ -76,8 +76,8 @@
 						Attribute
 					</li>
 
-					<li class="sidebar-item {{ request()->routeIs('productattribute.create') ? 'active' : '' }}">
-						<a class="sidebar-link" href="{{ route('productattribute.create') }}">
+					<li class="sidebar-item {{ request()->routeIs('admin.product_attribute.create') ? 'active' : '' }}">
+						<a class="sidebar-link" href="{{ route('admin.product_attribute.create') }}">
               <i class="align-middle" data-feather="plus"></i> <span class="align-middle">Create</span>
             </a>
 					</li>
